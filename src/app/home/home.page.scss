@@ -10,11 +10,15 @@ ion-menu-button {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  border-radius: 25px !important;
 }
 
 ::ng-deep #ion-button {
   border-radius: 25px !important;
+  -moz-border-radius: 10px;
+}
+
+::ng-deep #ion-header {
+  background-color: #ac2292 !important;
 }
 
 #container strong {
