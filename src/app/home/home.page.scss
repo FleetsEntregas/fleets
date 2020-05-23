@@ -3,12 +3,18 @@ ion-menu-button {
 }
 
 #container {
+  margin: 15px;
   text-align: center;
   position: absolute;
   left: 0;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  border-radius: 25px !important;
+}
+
+::ng-deep #ion-button {
+  border-radius: 25px !important;
 }
 
 #container strong {
