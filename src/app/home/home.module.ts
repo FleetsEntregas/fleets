@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SolicitacaoTransporteComponent } from './solicitacao-transporte/solicitacao-transporte.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { SolicitacaoTransporteService } from '../services/solicitacao-transporte.service';
 
 @NgModule({
   imports: [
@@ -21,6 +22,9 @@ import { InicioComponent } from './inicio/inicio.component';
     HomePage,
     InicioComponent,
     SolicitacaoTransporteComponent
+  ],
+  providers: [
+    SolicitacaoTransporteService
   ]
 })
 export class HomePageModule {}
