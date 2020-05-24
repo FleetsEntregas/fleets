@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-solicitacao-transporte',
@@ -7,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolicitacaoTransporteComponent implements OnInit {
 
-  constructor() { }
+  constructor(public menu: MenuController, private router: Router) { }
 
   ngOnInit() {
-    console.log('aaaaaaaaaaaaa')
+    this.desativaMenu();
+  }
+  
+  desativaMenu() {
+    this.menu.enable(false);
+  }
+  
+  ativaMenu() {
+    this.menu.enable(true);
   }
 
 }
