@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { SolicitacaoTransporteService } from '../services/solicitacao-transporte.service';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +8,14 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  public home: string;
+  public titulo: string;
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute, private solicitacaoTransporteService: SolicitacaoTransporteService) { }
 
   ngOnInit() {
-    this.home = this.activatedRoute.snapshot.paramMap.get('id');
+    this.solicitacaoTransporteService.alteracaoPag.subscribe(r => {
+      this.titulo = r;
+    })
   }
 
 }
