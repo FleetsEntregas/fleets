@@ -12,6 +12,8 @@ export class SolicitacaoTransporteComponent implements OnInit {
   constructor(public menu: MenuController, private router: Router) { }
 
   estagio = 1;
+  endereco = false;
+
   ufs = [
     'GO'
   ]
@@ -29,7 +31,22 @@ export class SolicitacaoTransporteComponent implements OnInit {
   }
 
   proximo() {
-    this.estagio ++;
+    if(this.estagio < 3) {
+      this.estagio ++;
+    }
+    else {
+      this.router.navigate(['/inicio']);
+    }
+  }
+
+  concluido() {
+    this.endereco = false;
+    this.estagio = 1;
+  }
+
+  telaEndereco(){
+    this.estagio = 0;
+    this.endereco = true;
   }
 
 }

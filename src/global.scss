@@ -30,6 +30,7 @@ ion-button {
     --border-radius: 30px !important;
     height: 45px;
     font-size: 16px;
+    --box-shadow: none !important;
 }
 
 ion-select {
@@ -40,5 +41,4 @@ ion-select {
 
 ion-label {
     color: #ac2292 !important;
-    --box-shadow: none !important;
 }
