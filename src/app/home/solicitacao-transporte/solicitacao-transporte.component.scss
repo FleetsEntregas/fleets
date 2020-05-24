@@ -10,6 +10,7 @@ ion-select {
     border-radius: 30px !important;
     border: 2px solid #ac2292;
     color: #ac2292;
+    padding-left: 20px !important;
 }
 
 ion-col {
@@ -44,11 +45,6 @@ ion-item {
     position: absolute;
     bottom: 0;
     left: 0;
-}
-
-.entrar {
-    padding: 0px 15px 0px 15px;
-    margin: 20px 0px 20px 0px;
 }
 
 .btn-criar {
@@ -116,3 +112,17 @@ ion-item {
   transform: translateX(20px);
 }
 //!switch button
+
+.btn-padrao {
+    padding: 0px 15px 0px 15px;
+    margin: 20px 0px 20px 0px;
+}
+
+.btn-endereco {
+    font-size: 12px;
+    background-color: transparent !important;
+    border: 2px solid #ac2292;
+    border-radius: 30px !important;
+    border-style: dashed;
+    color: #ac2292 !important;
+}

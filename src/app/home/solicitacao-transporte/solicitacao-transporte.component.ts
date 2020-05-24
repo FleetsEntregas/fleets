@@ -11,7 +11,7 @@ export class SolicitacaoTransporteComponent implements OnInit {
 
   constructor(public menu: MenuController, private router: Router) { }
 
-  estagio = 4;
+  estagio = 1;
   ufs = [
     'GO'
   ]
