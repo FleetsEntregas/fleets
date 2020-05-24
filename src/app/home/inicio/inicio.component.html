@@ -1,5 +1,40 @@
 <ion-content [fullscreen]="true">
   <div id="container">
-    <ion-button expand="block" color="primary" (click)="test()">SOLICITAR FRETE</ion-button>
+    <ion-avatar>
+      <ion-icon name="person-sharp" class="user"></ion-icon>
+    </ion-avatar>
+    <h1>Olá <span>Fulano</span>
+    </h1>
+    <h6>Bem vindo de volta</h6>
+    <ion-grid>
+      <h6>Dashboard</h6>
+      <ion-row>
+        <ion-col>
+          <div class="card center">
+            <ion-icon color="primary" name="cube-outline"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="card center">
+              <ion-icon color="primary" name="car-outline"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="card center">
+              <ion-icon color="primary" name="cash-outline"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="card center">
+            <h2><b>30%</b></h2>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div class="solicitar">
+      <ion-button expand="block" color="light" (click)="test()" class="btn-solicitar">SOLICITAR FRETE</ion-button>
+    </div>
   </div>
 </ion-content>

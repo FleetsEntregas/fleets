@@ -7,12 +7,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  public home: string;
+  public title = "Fleets";
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.home = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
 }

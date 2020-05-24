@@ -1,38 +1,104 @@
 ion-menu-button {
-    color: var(--ion-color-primary);
-  }
-  
-  #container {
-    margin: 15px;
-    text-align: center;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  ::ng-deep #ion-button {
-    border-radius: 25px !important;
-    -moz-border-radius: 10px;
-  }
-  
-  ::ng-deep #ion-header {
-    background-color: #ac2292 !important;
-  }
-  
-  #container strong {
-    font-size: 20px;
-    line-height: 26px;
-  }
-  
-  #container p {
-    font-size: 16px;
-    line-height: 22px;
-    color: #8c8c8c;
-    margin: 0;
-  }
-  
-  #container a {
-    text-decoration: none;
-  }
+  color: var(--ion-color-primary);
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+  // margin: 15px;
+  padding: 20px;
+  // text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  // top: 50%;
+  // transform: translateY(-50%);
+  background-color: #ac2292;
+}
+
+::ng-deep #ion-button {
+  border-radius: 25px !important;
+  -moz-border-radius: 10px;
+}
+
+::ng-deep #ion-header {
+  background-color: #ac2292 !important;
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.center {
+  display: flex;
+  align-items: center !important;
+  flex-direction: table !important;
+  justify-content: center !important;
+}
+
+.card {
+  width: 100%;
+  height: 90px;
+  background-color: #ffffff;
+  font-size: 50px;
+}
+
+h1 {
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+h1 > span {
+  color:#d67ac5;
+  margin-bottom: 2px;
+}
+
+h6 {
+  color: #ffffff;
+  margin: 0px 0px 70px 0px;
+}
+
+h2 {
+  font-size: 80px;
+  color:#ac2292;
+}
+
+.card > p {
+  margin: 15px;
+  color:#ac2292;
+}
+
+ion-grid > h6 {
+  color: #d67ac5;
+  margin-bottom: 2px;
+}
+
+.solicitar {
+  margin: 20px 0px 0px 0px;
+  padding: 0px 5px 0px 5px;
+}
+
+ion-avatar {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center !important;
+  flex-direction: table !important;
+  justify-content: center !important;
+  font-size: 40px;
+}
+
+.user {
+  color: #8c8c8c;
+}
