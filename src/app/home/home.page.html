@@ -7,8 +7,6 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <div id="container">
-    <ion-button expand="block" color="primary" [routerLink]="['/solicitacao-transporte']">SOLICITAR FRETE</ion-button>
-  </div>
-</ion-content>
+<section class="main-container">
+  <router-outlet></router-outlet>
+</section>

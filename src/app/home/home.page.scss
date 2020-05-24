@@ -12,6 +12,10 @@ ion-menu-button {
   transform: translateY(-50%);
 }
 
+.main-container{
+  height: 100%;
+}
+
 ::ng-deep #ion-button {
   border-radius: 25px !important;
   -moz-border-radius: 10px;

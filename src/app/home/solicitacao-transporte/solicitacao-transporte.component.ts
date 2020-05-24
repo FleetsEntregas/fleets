@@ -9,6 +9,8 @@ export class SolicitacaoTransporteComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('aaaaaaaaaaaaa')
+  }
 
 }
