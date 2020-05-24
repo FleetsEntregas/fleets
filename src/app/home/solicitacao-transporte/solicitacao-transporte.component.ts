@@ -11,6 +11,11 @@ export class SolicitacaoTransporteComponent implements OnInit {
 
   constructor(public menu: MenuController, private router: Router) { }
 
+  estagio = 4;
+  ufs = [
+    'GO'
+  ]
+
   ngOnInit() {
     this.desativaMenu();
   }
@@ -21,6 +26,10 @@ export class SolicitacaoTransporteComponent implements OnInit {
   
   ativaMenu() {
     this.menu.enable(true);
+  }
+
+  proximo() {
+    this.estagio ++;
   }
 
 }

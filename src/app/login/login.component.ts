@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -9,14 +10,21 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router,
+    public menu: MenuController
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
+  ionViewWillEnter() {
+    this.menu.enable(false);
+  }
+
+  ionViewDidLeave() {
+    this.menu.enable(true);
+  }
 
   entrar() {
-    console.log("entrar");
     this.router.navigate(['/inicio']);
   }
 

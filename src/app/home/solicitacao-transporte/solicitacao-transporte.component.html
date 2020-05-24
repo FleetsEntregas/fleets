@@ -1,7 +1,92 @@
 <ion-content [fullscreen]="true">
   <ion-row>
     <ion-col>
-      
+
     </ion-col>
   </ion-row>
+
+
+  <ion-row *ngIf="estagio===2">
+    <ion-col>
+      <ion-item lines="none">
+        <ion-input type="text" placeholder="CEP">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-select placeholder="UF" style="width: 40%">
+          <ion-select-option value="f">GO</ion-select-option>
+        </ion-select>&nbsp;&nbsp;&nbsp;
+        <ion-select placeholder="Cidade" style="min-width: 60%">
+          <ion-select-option value="f">Goiânia</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input type="text" placeholder="Bairro">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input type="text" placeholder="Rua/Avenida">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input type="text" placeholder="Número" style="width: 50%">
+        </ion-input>&nbsp;&nbsp;&nbsp;
+        <ion-checkbox></ion-checkbox>&nbsp;
+        <ion-label color="primary">Sem número</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="estagio===3">
+    <ion-col>
+      <ion-item lines="none">
+        <ion-input type="text" placeholder="Largura(cm)">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input type="text" placeholder="Altura(cm)">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input type="text" placeholder="Comprimento(cm)">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input type="text" placeholder="Peso(kg)">
+        </ion-input>
+      </ion-item>
+      <ion-label color="primary">Selecione o veículo desejado</ion-label><br>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="estagio===4">
+    <ion-col>
+      <ion-item lines="none">
+        <ion-label><b>Receber no local</b></ion-label>
+        <div class="switch__container">
+          <input id="switch-shadow" class="switch switch--shadow" type="checkbox" checked />
+          <label for="switch-shadow"></label>
+        </div>
+      </ion-item>
+      <ion-list>
+          <ion-radio-group>
+      <ion-item lines="none">
+        <ion-label><b>Dinheiro</b></ion-label>
+        <ion-radio slot="end" value="true" [checked]="true"></ion-radio>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label><b>Cartão</b></ion-label>
+        <ion-radio slot="end"></ion-radio>
+      </ion-item>
+      </ion-radio-group>
+      </ion-list>
+      <div class="entrar">
+        <ion-button class="btn-criar" expand="block" color="light">Adicionar conta</ion-button>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <div class="proximo">
+    <ion-button expand="block" color="primary" (click)="proximo()">PRÓXIMO</ion-button>
+  </div>
 </ion-content>
