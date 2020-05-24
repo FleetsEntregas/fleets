@@ -3,20 +3,32 @@ ion-input {
     border: 2px solid #ac2292;
     font-size: 18px;
     color: #ac2292;
-    padding-left: 15px !important;
-    text-align: center;
+    padding-left: 20px !important;
 }
 
 ion-col {
     text-align: center;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 ion-item {
     margin: 20px 0px 20px 0px;
-    text-align: center;
     justify-content: center;
     align-items: center;
+}
+
+.btn-padrao {
+    padding: 0px 15px 0px 15px;
+    margin: 20px 0px 20px 0px;
+}
+
+.btn-endereco {
+    font-size: 12px;
+    background-color: transparent !important;
+    border: 2px solid #ac2292;
+    border-radius: 30px !important;
+    border-style: dashed;
+    color: #ac2292 !important;
 }

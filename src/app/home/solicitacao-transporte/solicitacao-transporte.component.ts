@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class SolicitacaoTransporteComponent implements OnInit {
 
+  estagio = false;
+
   constructor(public menu: MenuController, private router: Router) { }
 
   ngOnInit() {
