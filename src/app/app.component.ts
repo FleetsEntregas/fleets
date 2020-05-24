@@ -14,22 +14,22 @@ export class AppComponent implements OnInit {
   public appPages = [
     {
       title: 'Home',
-      url: '/menu/Fleets',
+      url: '/inicio',
       icon: 'home'
     },
     {
       title: 'Entregas',
-      url: '/menu/Entregas',
+      url: '/inicio',
       icon: 'paper-plane'
     },
     {
       title: 'Financeiro',
-      url: '/menu/Financeiro',
+      url: '/inicio',
       icon: 'wallet'
     },
     {
       title: 'Configurações',
-      url: '/menu/Configurações',
+      url: '/inicio',
       icon: 'settings'
     }
   ];
@@ -50,9 +50,5 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const path = window.location.pathname.split('menu/')[1];
-    if (path !== undefined) {
-      this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
-    }
   }
 }
