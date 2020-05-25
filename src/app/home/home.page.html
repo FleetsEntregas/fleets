@@ -1,15 +1,19 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" *ngIf="dash">
   <ion-toolbar color="light">
     <ion-buttons slot="start">
       <ion-menu-button color="primary"></ion-menu-button>
     </ion-buttons>
-
-    <!-- <ion-title class="logo">
+    <ion-title class="logo">
       <img src="/assets/images/logo_fleets_color.png" height="40">
-    </ion-title> -->
-
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-header [translucent]="true" *ngIf="!dash">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon slot="end" name="chevron-back"></ion-icon>
+    </ion-buttons>
     <ion-title>{{titulo}}</ion-title>
-
   </ion-toolbar>
 </ion-header>
 

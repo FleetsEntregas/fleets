@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { SolicitacaoTransporteService } from 'src/app/services/solicitacao-transporte.service';
+import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
   selector: 'app-solicitacao-transporte',
@@ -10,7 +10,7 @@ import { SolicitacaoTransporteService } from 'src/app/services/solicitacao-trans
 })
 export class SolicitacaoTransporteComponent implements OnInit {
 
-  constructor(private solicitacaoTransporteService: SolicitacaoTransporteService, public menu: MenuController, private router: Router) { }
+  constructor(private servicesService: ServicesService, public menu: MenuController, private router: Router) { }
 
   estagio = 1;
   endereco = false;
@@ -21,7 +21,11 @@ export class SolicitacaoTransporteComponent implements OnInit {
 
   ngOnInit() {
     this.desativaMenu();
-    this.solicitacaoTransporteService.alteracaoPag.emit('Dados do Destinatário');
+    this.servicesService.dash.emit(false);
+    this.servicesService.alteracaoPag.emit('Dados do Destinatário');
+    this.servicesService.voltar.subscribe(() => {
+      this.voltar();
+    })
   }
   
   desativaMenu() {
@@ -37,26 +41,49 @@ export class SolicitacaoTransporteComponent implements OnInit {
       this.estagio ++;
     }
     else {
+      this.ativaMenu();
+      this.servicesService.dash.emit(true);
       this.router.navigate(['/inicio']);
     }
     if(this.estagio === 2){
-      this.solicitacaoTransporteService.alteracaoPag.emit('Dados da Carga/Veículo');
+      this.servicesService.alteracaoPag.emit('Dados da Carga/Veículo');
     }
     else if(this.estagio === 3) {
-      this.solicitacaoTransporteService.alteracaoPag.emit('Forma de Pagamento');
+      this.servicesService.alteracaoPag.emit('Forma de Pagamento');
     }
   }
 
   concluido() {
     this.endereco = false;
     this.estagio = 1;
-    this.solicitacaoTransporteService.alteracaoPag.emit('Dados do Destinatário');
+    this.servicesService.alteracaoPag.emit('Dados do Destinatário');
   }
 
   telaEndereco(){
     this.estagio = 0;
     this.endereco = true;
-    this.solicitacaoTransporteService.alteracaoPag.emit('Endereço do Destinatário');
+    this.servicesService.alteracaoPag.emit('Endereço do Destinatário');
+  }
+
+  voltar() {
+    if(this.estagio === 0) {
+      this.endereco = false;
+      this.estagio = 1;
+      this.servicesService.alteracaoPag.emit('Dados do Destinatário');
+    }
+    else if(this.estagio === 1) {
+      this.ativaMenu();
+      this.servicesService.dash.emit(true);
+      this.router.navigate(['/inicio']);
+    }
+    else if(this.estagio === 2 ){
+      this.estagio --;
+      this.servicesService.alteracaoPag.emit('Dados do Destinatário');
+    }
+    else if(this.estagio === 3) {
+      this.estagio --;
+      this.servicesService.alteracaoPag.emit('Dados da Carga/Veículo');
+    }
   }
 
 }

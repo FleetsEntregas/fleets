@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SolicitacaoTransporteComponent } from './solicitacao-transporte/solicitacao-transporte.component';
 import { InicioComponent } from './inicio/inicio.component';
-import { SolicitacaoTransporteService } from '../services/solicitacao-transporte.service';
+import { ServicesService } from '../services/services.service';
 
 @NgModule({
   imports: [
@@ -24,7 +24,7 @@ import { SolicitacaoTransporteService } from '../services/solicitacao-transporte
     SolicitacaoTransporteComponent
   ],
   providers: [
-    SolicitacaoTransporteService
+    ServicesService
   ]
 })
 export class HomePageModule {}

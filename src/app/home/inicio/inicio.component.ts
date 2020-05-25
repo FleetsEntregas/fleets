@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
   selector: 'app-inicio',
@@ -8,15 +9,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class InicioComponent implements OnInit {
 
-  public home: string;
-
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private servicesService: ServicesService) { }
 
   ngOnInit() {
-    this.home = this.activatedRoute.snapshot.paramMap.get('id');
+    this.servicesService.dash.emit(true);        
   }
 
-  test(){
+  solicitacao(){
+    this.servicesService.dash.emit(false);
     this.router.navigate(['/solicitacao-transporte']);
   }
 

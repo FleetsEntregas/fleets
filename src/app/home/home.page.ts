@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SolicitacaoTransporteService } from '../services/solicitacao-transporte.service';
+import { ServicesService } from '../services/services.service';
 
 @Component({
   selector: 'app-home',
@@ -10,13 +10,23 @@ import { SolicitacaoTransporteService } from '../services/solicitacao-transporte
 export class HomePage implements OnInit {
 
   public titulo: string;
+  dash = true;
   
-  constructor(private activatedRoute: ActivatedRoute, private solicitacaoTransporteService: SolicitacaoTransporteService) { }
+  constructor(private activatedRoute: ActivatedRoute, private servicesService: ServicesService) { }
 
   ngOnInit() {
-    this.solicitacaoTransporteService.alteracaoPag.subscribe(r => {
+    this.dash = true;
+    this.servicesService.alteracaoPag.subscribe(r => {
       this.titulo = r;
     })
+
+    this.servicesService.dash.subscribe(r => {
+      this.dash = r;
+    })
+  }
+
+  voltar(){
+    this.servicesService.voltar.emit();
   }
 
 }
